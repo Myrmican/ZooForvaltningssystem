@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Zoo forvaltningssystem (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Zoo forvaltningssystem (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
