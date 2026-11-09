@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using Zoo_forvaltningssystem.Src.Util;
+using MySql.Data.MySqlClient;
 
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -24,7 +25,22 @@ namespace Zoo_forvaltningssystem
             this.ApplyBackdrop();
             configureWindow();
 
-            Database.Connect();
+            MySqlConnection database = Database.Connect();
+
+            using (MySqlCommand command = new MySqlCommand("SELECT id, type, name FROM zoo", database))
+            {
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        int id = reader.GetInt32("id");
+                        string type = reader.GetString("type");
+                        string name = reader.GetString("name");
+
+                        SelectAnimalBox.Items.Add(type + (type.EndsWith('e') ? "n '" : "en '") + name + "'");
+                    }
+                }
+            }
         }
 
         private void configureWindow()
@@ -47,7 +63,12 @@ namespace Zoo_forvaltningssystem
 
         private async void SelectAnimalBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            ComboBox combo = sender as ComboBox;
+            if (combo != null)
+            {
+                // Access properties here
+                var selectedItem = combo.SelectedItem;
+            }
         }
     }
 }

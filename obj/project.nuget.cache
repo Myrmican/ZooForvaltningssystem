@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Vn828kpO8NE=",
+  "dgSpecHash": "jpcYqGNB1Zo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\tc\\source\\repos\\Zoo forvaltningssystem\\Zoo forvaltningssystem.csproj",
+  "projectFilePath": "C:\\Users\\tc\\source\\repos\\ZooForvaltningssystem\\Zoo forvaltningssystem.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tc\\.nuget\\packages\\bouncycastle.cryptography\\2.6.2\\bouncycastle.cryptography.2.6.2.nupkg.sha512",
     "C:\\Users\\tc\\.nuget\\packages\\google.protobuf\\3.35.0\\google.protobuf.3.35.0.nupkg.sha512",
@@ -54,16 +54,16 @@
     "C:\\Users\\tc\\.nuget\\packages\\system.threading.ratelimiting\\8.0.0\\system.threading.ratelimiting.8.0.0.nupkg.sha512",
     "C:\\Users\\tc\\.nuget\\packages\\system.windows.extensions\\10.0.8\\system.windows.extensions.10.0.8.nupkg.sha512",
     "C:\\Users\\tc\\.nuget\\packages\\zstdsharp.port\\0.8.8\\zstdsharp.port.0.8.8.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\8.0.31\\microsoft.aspnetcore.app.runtime.win-arm64.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.31\\microsoft.aspnetcore.app.runtime.win-x64.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.31\\microsoft.aspnetcore.app.runtime.win-x86.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\8.0.31\\microsoft.netcore.app.runtime.win-arm64.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.31\\microsoft.netcore.app.runtime.win-x64.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.31\\microsoft.netcore.app.runtime.win-x86.8.0.31.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\8.0.33\\microsoft.netcore.app.runtime.win-x86.8.0.33.nupkg.sha512",
     "C:\\Users\\tc\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\8.0.31\\microsoft.windowsdesktop.app.runtime.win-arm64.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.31\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.31.nupkg.sha512",
-    "C:\\Users\\tc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.31\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.31.nupkg.sha512"
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\8.0.33\\microsoft.aspnetcore.app.runtime.win-x86.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\8.0.33\\microsoft.netcore.app.runtime.win-arm64.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.33\\microsoft.aspnetcore.app.runtime.win-x64.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\8.0.33\\microsoft.windowsdesktop.app.runtime.win-arm64.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.33\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\8.0.33\\microsoft.aspnetcore.app.runtime.win-arm64.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.33\\microsoft.netcore.app.runtime.win-x64.8.0.33.nupkg.sha512",
+    "C:\\Users\\tc\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\8.0.33\\microsoft.windowsdesktop.app.runtime.win-x86.8.0.33.nupkg.sha512"
   ],
   "logs": []
 }

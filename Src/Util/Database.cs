@@ -10,7 +10,6 @@ namespace Zoo_forvaltningssystem.Src.Util
 
         public static MySqlConnection? Connect()
         {
-
             if (connection != null) return connection;
 
             try
@@ -23,6 +22,15 @@ namespace Zoo_forvaltningssystem.Src.Util
             {
                 Console.WriteLine("Error connecting to database: " + e.Message);
                 return null;
+            }
+        }
+
+        public static void Disconnect()
+        {
+            if (connection != null)
+            {
+                connection.Close();
+                connection = null;
             }
         }
     }
