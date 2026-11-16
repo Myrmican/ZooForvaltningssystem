@@ -17,6 +17,7 @@ namespace Zoo_forvaltningssystem
     /// </summary>
     public sealed partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
@@ -26,20 +27,13 @@ namespace Zoo_forvaltningssystem
             configureWindow();
 
             MySqlConnection database = Database.Connect();
+            if (database == null) { return; }
 
-            using (MySqlCommand command = new MySqlCommand("SELECT id, type, name FROM zoo", database))
+            Zoo_forvaltningssystem.Src.Util.MenuItems.initializeAnimals(database, SelectAnimalBox);
+
+            for (int i = 0; i < Zoo_forvaltningssystem.Src.Util.MenuItems.animalTypes.Length; i++)
             {
-                using (MySqlDataReader reader = command.ExecuteReader())
-                {
-                    while (reader.Read())
-                    {
-                        int id = reader.GetInt32("id");
-                        string type = reader.GetString("type");
-                        string name = reader.GetString("name");
-
-                        SelectAnimalBox.Items.Add(type + (type.EndsWith('e') ? "n '" : "en '") + name + "'");
-                    }
-                }
+                SelectAnimalTypeBox.Items.Add(Zoo_forvaltningssystem.Src.Util.MenuItems.animalTypes[i]);
             }
         }
 
@@ -58,7 +52,12 @@ namespace Zoo_forvaltningssystem
 
         private void RegisterAnimalButton_Click(object sender, RoutedEventArgs e)
         {
-
+            RegisterAnimalButton.Visibility = Visibility.Collapsed;
+            SelectAnimalBox.Visibility = Visibility.Collapsed;
+            DeleteAnimalButton.Visibility = Visibility.Collapsed;
+            SelectAnimalLabel.Visibility = Visibility.Collapsed;
+            CreateAnimalName.Visibility = Visibility.Visible;
+            SelectAnimalTypeBox.Visibility = Visibility.Visible;
         }
 
         private async void SelectAnimalBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,6 +67,34 @@ namespace Zoo_forvaltningssystem
             {
                 // Access properties here
                 var selectedItem = combo.SelectedItem;
+                if (selectedItem != null)
+                {
+                    DeleteAnimalButton.Visibility = Visibility.Visible;
+                }
+            }
+        }
+
+        private async void CreateAnimalName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null)
+            {
+                // Access properties here
+                var text = textBox.Text;
+            }
+        }
+
+        private async void DeleteAnimalButton_Click(object sender, RoutedEventArgs e)
+        {
+            ComboBox combo = SelectAnimalBox;
+            if (combo != null)
+            {
+                var selectedItem = combo.SelectedItem;
+                if (selectedItem != null)
+                {
+                    string selectedAnimal = selectedItem.ToString();
+                    
+                }
             }
         }
     }

@@ -2,7 +2,7 @@
     x:Class="Zoo_forvaltningssystem.MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
     <Grid x:Name="RootGrid">
         <Grid Padding="16,16,16,0" RowSpacing="16">
             <Grid.RowDefinitions>
@@ -28,6 +28,14 @@
                         Content="Opret dyr"
                         Click="RegisterAnimalButton_Click"
                         HorizontalAlignment="Stretch" />
+
+                    <TextBox
+                        Header="Navn"
+                        PlaceholderText="Indtast dyrnavn"
+                        x:Name="CreateAnimalName"
+                        HorizontalAlignment="Stretch"
+                        TextChanged="CreateAnimalName_TextChanged"
+                        Visibility="Collapsed"/>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Spacing="4">
@@ -35,6 +43,18 @@
                         x:Name="SelectAnimalBox"
                         HorizontalAlignment="Stretch"
                         SelectionChanged="SelectAnimalBox_SelectionChanged" />
+
+                    <ComboBox
+                        x:Name="SelectAnimalTypeBox"
+                        HorizontalAlignment="Stretch"
+                        Visibility="Collapsed"/>
+
+                    <Button
+                        x:Name="DeleteAnimalButton"
+                        Content="Slet dyr"
+                        Click="DeleteAnimalButton_Click"
+                        HorizontalAlignment="Stretch"
+                        Visibility="Collapsed"/>
                 </StackPanel>
             </Grid>
         </Grid>
