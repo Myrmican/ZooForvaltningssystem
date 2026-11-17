@@ -1,5 +1,7 @@
-﻿using Microsoft.UI.Xaml.Controls;
+﻿using Microsoft.Data.SqlClient;
+using Microsoft.UI.Xaml.Controls;
 using MySql.Data.MySqlClient;
+using System;
 using System.Globalization;
 
 namespace Zoo_forvaltningssystem.Src.Util
@@ -25,6 +27,33 @@ namespace Zoo_forvaltningssystem.Src.Util
                         string animalType = animalTypeTextInfo.ToTitleCase(type.ToLower());
 
                         selectAnimalBox.Items.Add(animalType + (type.EndsWith('e') ? "n '" : "en '") + name + "'");
+                    }
+                }
+            }
+        }
+
+        public static void deleteAnimal(MySqlConnection database, ComboBox combo)
+        {
+            object selectedItem = combo.SelectedItem;
+            if (selectedItem != null)
+            {
+                string query = "DELETE FROM zoo WHERE id = @Id";
+                using (MySqlCommand command = new MySqlCommand(query, database))
+                {
+                    command.Parameters.AddWithValue("@Id", combo.SelectedIndex);
+
+                    try
+                    {
+                        database.Open();
+                        command.ExecuteNonQuery();
+
+                        combo.Items.Remove(selectedItem);
+
+                        combo.Text = "Suc";
+                    }
+                    catch (Exception ex)
+                    {
+                        combo.Text = $"Error: {ex.Message}";
                     }
                 }
             }

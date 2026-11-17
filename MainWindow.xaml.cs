@@ -90,10 +90,10 @@ namespace Zoo_forvaltningssystem
             if (combo != null)
             {
                 var selectedItem = combo.SelectedItem;
+                combo.Text = "Deleting...";
                 if (selectedItem != null)
                 {
-                    string selectedAnimal = selectedItem.ToString();
-                    
+                    MenuItems.deleteAnimal(Database.Connect(), combo);
                 }
             }
         }
