@@ -32,6 +32,30 @@ namespace Zoo_forvaltningssystem.Src.Util
             }
         }
 
+        public static void addAnimal(MySqlConnection database, ComboBox combo, string animalType, string animalName)
+        {
+            string query = "INSERT INTO zoo (type, name) VALUES (@Type, @Name)";
+            using (MySqlCommand command = new MySqlCommand(query, database))
+            {
+                command.Parameters.AddWithValue("@Type", animalType);
+                command.Parameters.AddWithValue("@Name", animalName);
+                try
+                {
+                    command.ExecuteNonQuery();
+                    string animalTypeFormatted = animalTypeTextInfo.ToTitleCase(animalType.ToLower());
+                    combo.Items.Add(animalTypeFormatted + (animalType.EndsWith('e') ? "n '" : "en '") + animalName + "'");
+                }
+                catch (Exception ex)
+                {
+                    combo.Text = $"Error: {ex.Message}";
+                }
+                finally
+                {
+                    database.Close();
+                }
+            }
+        }
+
         public static void deleteAnimal(MySqlConnection database, ComboBox combo)
         {
             object selectedItem = combo.SelectedItem;
@@ -44,16 +68,16 @@ namespace Zoo_forvaltningssystem.Src.Util
 
                     try
                     {
-                        database.Open();
                         command.ExecuteNonQuery();
 
                         combo.Items.Remove(selectedItem);
-
-                        combo.Text = "Suc";
                     }
                     catch (Exception ex)
                     {
                         combo.Text = $"Error: {ex.Message}";
+                    } finally
+                    {
+                        database.Close();
                     }
                 }
             }

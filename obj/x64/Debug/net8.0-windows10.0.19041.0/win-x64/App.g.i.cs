@@ -23,7 +23,6 @@ namespace Zoo_forvaltningssystem
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2609")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 #if !DISABLE_XAML_GENERATED_MAIN
-        [global::System.STAThreadAttribute]
         static void Main(string[] args)
 #else
         internal static void XamlGeneratedMain()

@@ -25,7 +25,7 @@ namespace Zoo_forvaltningssystem
 
             this.ApplyBackdrop();
             configureWindow();
-
+            
             MySqlConnection database = Database.Connect();
             if (database == null) { return; }
 
@@ -90,7 +90,6 @@ namespace Zoo_forvaltningssystem
             if (combo != null)
             {
                 var selectedItem = combo.SelectedItem;
-                combo.Text = "Deleting...";
                 if (selectedItem != null)
                 {
                     MenuItems.deleteAnimal(Database.Connect(), combo);
